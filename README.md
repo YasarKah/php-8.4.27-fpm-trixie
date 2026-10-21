@@ -1,5 +1,7 @@
 # php-release-bridge
 
+[![build](https://github.com/YasarKah/php-release-bridge/actions/workflows/build.yml/badge.svg)](https://github.com/YasarKah/php-release-bridge/actions/workflows/build.yml)
+
 Community-built PHP Docker images bridging the gap between upstream PHP releases and official Docker image availability.
 
 > [!IMPORTANT]
