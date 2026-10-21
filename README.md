@@ -1,6 +1,6 @@
-# php-release-bridge
+# php-8.4.27-fpm-trixie
 
-[![build](https://github.com/YasarKah/php-release-bridge/actions/workflows/build.yml/badge.svg)](https://github.com/YasarKah/php-release-bridge/actions/workflows/build.yml)
+[![build](https://github.com/YasarKah/php-8.4.27-fpm-trixie/actions/workflows/build.yml/badge.svg)](https://github.com/YasarKah/php-8.4.27-fpm-trixie/actions/workflows/build.yml)
 
 Community-built PHP Docker images bridging the gap between upstream PHP releases and official Docker image availability.
 
@@ -9,6 +9,8 @@ Community-built PHP Docker images bridging the gap between upstream PHP releases
 > the PHP project, Docker, Inc. or the [Docker Official Images](https://github.com/docker-library/official-images) program.
 > When the official [`php`](https://hub.docker.com/_/php) tag for the same version is available, **use the official image** —
 > see [Migrating to the official image](#migrating-to-the-official-image).
+>
+> This repository is temporary by design: it covers a single release and will be archived once the official tag is published.
 
 ## Why
 
@@ -35,8 +37,8 @@ docker run --rm ghcr.io/yasarkah/php:8.4.27-fpm-trixie php -v
 ```
 
 Pin by digest in production. The digest of every build is shown in the
-[workflow run summary](https://github.com/YasarKah/php-release-bridge/actions/workflows/build.yml) and on the
-[package page](https://github.com/YasarKah/php-release-bridge/pkgs/container/php):
+[workflow run summary](https://github.com/YasarKah/php-8.4.27-fpm-trixie/actions/workflows/build.yml) and on the
+[package page](https://github.com/users/YasarKah/packages/container/package/php):
 
 ```dockerfile
 FROM ghcr.io/yasarkah/php:8.4.27-fpm-trixie@sha256:<digest>
@@ -119,8 +121,8 @@ Bridge images are not rebuilt after the official tag is published.
 ### Build locally
 
 ```sh
-docker build --platform linux/amd64 -t php-release-bridge:8.4.27-fpm-trixie 8.4/trixie/fpm
-tests/smoke.sh php-release-bridge:8.4.27-fpm-trixie 8.4.27
+docker build --platform linux/amd64 -t php-local:8.4.27-fpm-trixie 8.4/trixie/fpm
+tests/smoke.sh php-local:8.4.27-fpm-trixie 8.4.27
 ```
 
 ## Differences from the official image
@@ -129,7 +131,7 @@ tests/smoke.sh php-release-bridge:8.4.27-fpm-trixie 8.4.27
 |---|---|---|
 | Dockerfile | `docker-library/php` | Same file, with the changes below |
 | Base image | `debian:trixie-slim`, rebuilt on every base update | `debian:trixie-slim` pinned by digest |
-| `PHP_BUILD_PROVIDER` (shown in `php -i`) | `https://github.com/docker-library/php` | `https://github.com/YasarKah/php-release-bridge` |
+| `PHP_BUILD_PROVIDER` (shown in `php -i`) | `https://github.com/docker-library/php` | `https://github.com/YasarKah/php-8.4.27-fpm-trixie` |
 | OCI labels | — | Title, source, license, "unofficial" description |
 | Platforms | amd64, arm64, and others | `linux/amd64` only |
 | Tags | Many aliases (`8.4-fpm`, `fpm`, …) | One exact tag per release |

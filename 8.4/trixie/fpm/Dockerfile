@@ -9,9 +9,9 @@
 # debian:trixie-slim (trixie-20261020-slim), multi-arch index digest
 FROM debian:trixie-slim@sha256:62bd423aeee912639ca8ee681c2b762cb3e25137e0a92b20be455898a9f034ad
 
-LABEL org.opencontainers.image.title="php-release-bridge 8.4-fpm-trixie" \
+LABEL org.opencontainers.image.title="php 8.4-fpm-trixie (unofficial)" \
 	org.opencontainers.image.description="Unofficial, community-built PHP-FPM image. Not affiliated with PHP or Docker. Prefer the official php image when available." \
-	org.opencontainers.image.source="https://github.com/YasarKah/php-release-bridge" \
+	org.opencontainers.image.source="https://github.com/YasarKah/php-8.4.27-fpm-trixie" \
 	org.opencontainers.image.licenses="MIT AND PHP-3.01" \
 	org.opencontainers.image.base.name="docker.io/library/debian:trixie-slim"
 
@@ -125,7 +125,7 @@ RUN set -eux; \
 		CPPFLAGS="$PHP_CPPFLAGS" \
 		LDFLAGS="$PHP_LDFLAGS" \
 # https://github.com/php/php-src/blob/d6299206dd828382753453befd1b915491b741c6/configure.ac#L1496-L1511
-		PHP_BUILD_PROVIDER='https://github.com/YasarKah/php-release-bridge' \
+		PHP_BUILD_PROVIDER='https://github.com/YasarKah/php-8.4.27-fpm-trixie' \
 		PHP_UNAME='Linux - Docker' \
 	; \
 	docker-php-source extract; \
