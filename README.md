@@ -41,7 +41,7 @@ Pin by digest in production. The digest of every build is shown in the
 [package page](https://github.com/users/YasarKah/packages/container/package/php):
 
 ```dockerfile
-FROM ghcr.io/yasarkah/php:8.4.27-fpm-trixie@sha256:<digest>
+FROM ghcr.io/yasarkah/php:8.4.27-fpm-trixie@sha256:072a22dc582ca17278c453a03b3dc862e9c59a943351b39edf3aabca20978884
 ```
 
 The image behaves like `php:8.4-fpm-trixie`: FPM listens on port `9000`, the document root is `/var/www/html`,
